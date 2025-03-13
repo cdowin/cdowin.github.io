@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Dowin - Software Engineering Executive</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --border-radius: 5px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .profile-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .profile-header {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .profile-contact {
+            flex: 1;
+            min-width: 300px;
+            text-align: right;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 15px 0 10px 0;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 10px;
+        }
+        
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .summary {
+            background-color: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job {
+            background-color: white;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        
+        .job-company {
+            font-weight: bold;
+        }
+        
+        .job-location {
+            color: #666;
+        }
+        
+        .job-date {
+            color: #666;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin-left: 20px;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        ul li::before {
+            content: "-";
+            position: absolute;
+            left: -20px;
+        }
+        
+        .skills {
+            background-color: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .skill-item {
+            background-color: var(--light-color);
+            padding: 5px 15px;
+            margin: 0 10px 10px 0;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .cta {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .accomplishment {
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-contact {
+                text-align: left;
+                margin-top: 20px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+            }
+            
+            .job-date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container profile-container">
+            <div class="profile-header">
+                <h1>Christopher Dowin</h1>
+                <p>Vice President, Software Engineering</p>
+            </div>
+            <div class="profile-contact">
+                <p><a href="mailto:cdowin@gmail.com">cdowin@gmail.com</a></p>
+                <p>Bethany, CT</p>
+                <p><a href="https://www.linkedin.com/in/chrisdowin" target="_blank">LinkedIn Profile</a></p>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="summary">
+            <p>Transforming Software Engineering & Operations to maximize efficiency & align innovation with business goals. 15+ years' experience with Software, DevOps, and Cloud. 8+ years as a manager and executive leader.</p>
+            <p>Visionary, proactive, and results-driven engineering executive with expertise in leading end-to-end designs via a managed Software Development Lifecycle (SDLC), while optimizing costs and efficiency to focus on customer value-add.</p>
+            <p>Curious strategic thinker with deep technical background in scaled customer-facing cloud microservice solutions. Passionate cross-functional team leader and mentor galvanizing diverse high-performing teams to set a high bar of excellence in order to motivate the business to achieve the most difficult objectives.</p>
+        </section>
+        
+        <h2>Major Accomplishments</h2>
+        
+        <div class="accomplishment">
+            <p><strong>Francis Scott Key Bridge Disaster Response (April 2024):</strong> Directly coordinated a response to the incident with the customer and external stakeholders. Designed an out of cycle release of upcoming capabilities to publish National AIS vessel positions for situational awareness around the bridge. The solution was built, tested, verified, and deployed end-to-end in less than two weeks, enabling unprecedented data awareness for the U.S. Coast Guard.</p>
+        </div>
+        
+        <div class="accomplishment">
+            <p><strong>Maxar Geospatial Platform Architecture Upgrade (June 2023):</strong> Led cross-company architectural design initiative to consolidate 12+ separate customer deployments into one primary suite of capabilities, saving 4 days per team per month in O&M costs to sustain deployments. Modernized tech stack to ease updates to platform, reducing overall load on DevOps, Business, and Engineering teams.</p>
+        </div>
+        
+        <div class="accomplishment">
+            <p><strong>eAPI (Enhanced API) Successful Contract Negotiation & Delivery (2022):</strong> Negotiated scope and established engineering vision for a brand-new customer mission across a 2-year, $8M contract. Architected a scalable microservice design to meet customer needs. Delivered three months ahead of schedule and 30% under budget.</p>
+        </div>
+        
+        <div class="accomplishment">
+            <p><strong>Global Enhanced GEOINT Delivery (GEGD) Contract Modernization & Sustainment (2019):</strong> Took over engineering management of $44M/yr. firm fixed price contract (GEGD), aligned delivery teams and enabled stuck feature delivery resulting in contract plus-up to $50M/yr.</p>
+        </div>
+        
+        <h2>Work Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Vice President, Software Engineering</div>
+                    <div class="job-company">Pole Star Defense</div>
+                </div>
+                <div>
+                    <div class="job-location">Remote</div>
+                    <div class="job-date">October 2023 to Present</div>
+                </div>
+            </div>
+            <ul>
+                <li>Created a value-aligned Public Sector Engineering organization focused on executing against direct customer requirements. Consolidated work from subcontractors to streamline value delivery on $49M IDIQ by establishing guiding principles and KPIs which enabled a funded $2.5M contract ceiling increase.</li>
+                <li>Built a scalable maritime data intelligence microservice platform leveraging full IaC automation, GitLab, Kubernetes, Istio, Keycloak, and AWS. Modular architecture allowed for delivery across ten separate customer environments.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Director - Software Engineering, Mission Accelerator Group</div>
+                    <div class="job-company">Maxar, Inc</div>
+                </div>
+                <div>
+                    <div class="job-location">Remote & Melbourne, FL</div>
+                    <div class="job-date">December 2022 to October 2023</div>
+                </div>
+            </div>
+            <ul>
+                <li>Deputy of department. Reconciled disparate Engineering organizations into one cohesive software factory utilizing a $9M annual budget to enable remote sensing processing capability linked to $40M+ revenue.</li>
+                <li>Enabled revenue expansion to $50M+ through efficiency initiatives which boosted customer confidence for follow-on work.</li>
+                <li>Spearheaded full reorganization of GEOINT access division and integrated sibling MAG Applied Machine Learning organization, accelerating value on current and inherited projects. This aligned with Product vision to create a factory to output "turn key" multi-cloud solutions across AWS, Azure, and disconnected customer environments.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Director, Software Engineering, GEOINT Access Division</div>
+                    <div class="job-company">Maxar, Inc</div>
+                </div>
+                <div>
+                    <div class="job-location">Remote</div>
+                    <div class="job-date">January 2022 to December 2022</div>
+                </div>
+            </div>
+            <ul>
+                <li>Created a cross-functional division for disseminating imagery and derived intelligence products. Responsible for $8M annual revenue P&L. Beat expected growth target year-over-year by reducing expenses and aligning talent to a common delivery roadmap.</li>
+                <li>Led software solution consolidation, consolidating engineering for GEGD contract ($44M/yr.) to create a cohesive work intake / output stream. Revamped current solution to meet customer requirements, resulting in adoption of five total third-party sources with $200k additional revenue per source ($1M total).</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Sr. Manager, Engineering, Air and Space Division</div>
+                    <div class="job-company">Maxar, Inc</div>
+                </div>
+                <div>
+                    <div class="job-location">Remote & Melbourne, FL</div>
+                    <div class="job-date">January 2018 to January 2022</div>
+                </div>
+            </div>
+            <ul>
+                <li>Organized several tribal engineering teams into a cohesive organization. Developed a responsible release train of teams that adhered to unified metrics used for self-reflection and improvement. Established best practices in automating delivery of cloud solutions.</li>
+                <li>Maxar Geospatial Platform Customer Cloud Uplift successfully administered in 2019/2020 to migrate image processing capability from Commercial AWS to Government Top Secret AWS. Turned $300,000 initial investment into $4.5M ARR on contract renewal in 2023.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Manager, Engineering, ISR Division</div>
+                    <div class="job-company">Radiant Solutions (acquired by Maxar)</div>
+                </div>
+                <div>
+                    <div class="job-location">Remote and Melbourne, FL</div>
+                    <div class="job-date">May 2016 to January 2018</div>
+                </div>
+            </div>
+            <ul>
+                <li>Drove initiative of 100% adoption of AWS cloud infrastructure for all programs, reducing IT on-premises costs and improving resiliency with a push-button code-to-deployment paradigm using Terraform, GitLab, Kubernetes, and Helm. Saved 50% in cloud costs ($60k/yr.).</li>
+                <li>Managed software release lifecycle of open source toolset, OSSIM (github.com/ossimlabs), for just-in-time remote sensing image processing. Balanced community and company needs to ensure secure deliverables in order to successfully execute against OPTIMUS $8M IDIQ for intelligence customers.</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Software Engineer III</div>
+                    <div class="job-company">NantHealth</div>
+                </div>
+                <div>
+                    <div class="job-location">Remote & Melbourne, FL</div>
+                    <div class="job-date">November 2014 to May 2016</div>
+                </div>
+            </div>
+            <ul>
+                <li>Lead development of dynamically scalable Java Spring back-end services that met customer requirements for third party fitness device integration into the Nant healthcare platform. The integration was compliant with all HIPAA security requirements and enabled users to view all relevant data from one dashboard which increased adoption of the platform.</li>
+            </ul>
+        </div>
+        
+        <section class="skills">
+            <h2>Skills</h2>
+            
+            <div class="skill-category">
+                <div class="skill-title">Technical:</div>
+                <div class="skill-list">
+                    <span class="skill-item">Software Design</span>
+                    <span class="skill-item">Microservices Architecture</span>
+                    <span class="skill-item">AWS</span>
+                    <span class="skill-item">Terraform</span>
+                    <span class="skill-item">Kubernetes</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">GitLab</span>
+                    <span class="skill-item">Enterprise Data Management</span>
+                    <span class="skill-item">Data Analytics</span>
+                    <span class="skill-item">RESTful APIs</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <div class="skill-title">Management:</div>
+                <div class="skill-list">
+                    <span class="skill-item">Leadership</span>
+                    <span class="skill-item">P&L Management</span>
+                    <span class="skill-item">Earned Value Management</span>
+                    <span class="skill-item">Strategic Planning</span>
+                    <span class="skill-item">Recruiting</span>
+                    <span class="skill-item">Motivation</span>
+                    <span class="skill-item">Budgeting</span>
+                    <span class="skill-item">OKRs</span>
+                </div>
+            </div>
+        </section>
+        
+        <h2>Education</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Bachelor of Science (magna cum laude), Computer Science</div>
+                    <div class="job-company">Florida Institute of Technology</div>
+                </div>
+                <div>
+                    <div class="job-location">Melbourne, Florida</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta">
+            <a href="mailto:cdowin@gmail.com" class="btn">Contact Me</a>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Christopher Dowin. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
