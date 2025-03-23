@@ -423,6 +423,161 @@
             </div>
         </div>
         
+        <style>
+            .projects-section {
+                margin: 40px 0;
+            }
+            
+            .project-card {
+                background-color: white;
+                border-radius: var(--border-radius);
+                box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+                margin-bottom: 30px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .project-header {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 15px 20px;
+            }
+            
+            .project-title {
+                font-size: 1.4rem;
+                margin-bottom: 5px;
+            }
+            
+            .project-title a {
+                color: white;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                transition: color 0.3s;
+            }
+            
+            .project-title a:hover {
+                color: var(--light-color);
+            }
+            
+            .project-title a svg {
+                margin-left: 8px;
+                width: 16px;
+                height: 16px;
+            }
+            
+            .project-tech {
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+            
+            .project-body {
+                padding: 20px;
+            }
+            
+            .project-description {
+                margin-bottom: 15px;
+            }
+            
+            .project-features {
+                margin-top: 15px;
+            }
+            
+            .feature-list {
+                list-style-type: none;
+                margin-left: 0;
+            }
+            
+            .feature-list li {
+                margin-bottom: 8px;
+                padding-left: 25px;
+                position: relative;
+            }
+            
+            .feature-list li::before {
+                content: "✓";
+                color: var(--secondary-color);
+                position: absolute;
+                left: 0;
+                font-weight: bold;
+            }
+            
+            .project-image {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #eee;
+                border-radius: 5px;
+                margin-top: 15px;
+            }
+        </style>
+        
+        <h2>Personal Projects</h2>
+        
+        <section class="projects-section">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <a href="https://gamblewise.app" target="_blank">
+                            Gamblewise
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="project-tech">React, Node.js, Supabase, Cloud Infrastructure, Microservices</div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">
+                        <p>A responsible gambling application designed to help users make informed decisions about their gambling activities. The platform combines data analytics with user-friendly interfaces to promote healthier gambling habits.</p>
+                    </div>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul class="feature-list">
+                            <li>Global statistics of wins and losses across all games</li>
+                            <li>Secure, privacy-focused architecture</li>
+                            <li>Responsive design for both mobile and desktop</li>
+                            <li>Cloud-based microservices architecture for scalability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Template for future projects -->
+            <!--
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">
+                        <a href="PROJECT_URL" target="_blank">
+                            PROJECT_NAME
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="project-tech">TECHNOLOGIES_USED</div>
+                </div>
+                <div class="project-body">
+                    <div class="project-description">
+                        <p>PROJECT_DESCRIPTION</p>
+                    </div>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul class="feature-list">
+                            <li>FEATURE_1</li>
+                            <li>FEATURE_2</li>
+                            <li>FEATURE_3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            -->
+        </section>
+        
         <div class="cta">
             <a href="mailto:cdowin@gmail.com" class="btn">Contact Me</a>
         </div>
