@@ -3,18 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christopher Dowin - Software Engineering Executive</title>
+    <title>Christopher Dowin - Executive Leader</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --border-radius: 5px;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -22,10 +12,10 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f5f5f5;
+            color: #2c3e50;
+            background: #ffffff;
         }
         
         .container {
@@ -35,558 +25,462 @@
         }
         
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 40px 0;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .profile-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
+            background-size: cover;
         }
         
-        .profile-header {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .profile-contact {
-            flex: 1;
-            min-width: 300px;
-            text-align: right;
+        .header-content {
+            position: relative;
+            z-index: 1;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 3em;
+            font-weight: 300;
             margin-bottom: 10px;
         }
         
-        h2 {
-            font-size: 1.8rem;
-            margin: 30px 0 15px 0;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 5px;
-        }
-        
-        h3 {
-            font-size: 1.3rem;
-            margin: 15px 0 10px 0;
-            color: var(--primary-color);
-        }
-        
-        p {
-            margin-bottom: 10px;
-        }
-        
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        .summary {
-            background-color: white;
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: var(--border-radius);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .job {
-            background-color: white;
-            padding: 20px 30px;
+        .tagline {
+            font-size: 1.3em;
+            font-weight: 300;
             margin-bottom: 20px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0.9;
         }
         
-        .job-header {
+        .contact-info {
             display: flex;
-            justify-content: space-between;
+            gap: 30px;
             flex-wrap: wrap;
-            margin-bottom: 15px;
+            margin-top: 30px;
         }
         
-        .job-title {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--primary-color);
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.9);
         }
         
-        .job-company {
-            font-weight: bold;
+        .section {
+            padding: 60px 0;
         }
         
-        .job-location {
-            color: #666;
+        .section:nth-child(even) {
+            background: #f8f9fa;
         }
         
-        .job-date {
-            color: #666;
-        }
-        
-        ul {
-            list-style-type: none;
-            margin-left: 20px;
-        }
-        
-        ul li {
-            margin-bottom: 10px;
+        .section-title {
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #1e3c72;
             position: relative;
         }
         
-        ul li::before {
-            content: "-";
+        .section-title::after {
+            content: '';
             position: absolute;
-            left: -20px;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
         }
         
-        .skills {
-            background-color: white;
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .impact-card {
+            background: white;
             padding: 30px;
-            margin: 30px 0;
-            border-radius: var(--border-radius);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #2a5298;
+            transition: transform 0.3s ease;
         }
         
-        .skill-category {
-            margin-bottom: 20px;
+        .impact-card:hover {
+            transform: translateY(-5px);
         }
         
-        .skill-title {
-            font-weight: bold;
+        .impact-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1e3c72;
+            line-height: 1;
             margin-bottom: 10px;
         }
         
-        .skill-list {
+        .impact-description {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .leadership-philosophy {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            font-size: 1.1em;
+            line-height: 1.8;
+            border-left: 4px solid #2a5298;
+        }
+        
+        .experience-item {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .company-header {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
         
-        .skill-item {
-            background-color: var(--light-color);
-            padding: 5px 15px;
-            margin: 0 10px 10px 0;
+        .company-name {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #1e3c72;
+        }
+        
+        .role-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .tenure {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .achievements {
+            list-style: none;
+        }
+        
+        .achievements li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+        
+        .achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h4 {
+            font-size: 1.3em;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background: #e8f2ff;
+            color: #1e3c72;
+            padding: 8px 16px;
             border-radius: 20px;
-            display: inline-block;
+            font-size: 0.9em;
+            font-weight: 500;
         }
         
-        .cta {
+        .education {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             text-align: center;
-            margin: 50px 0;
         }
         
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .degree {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 10px;
         }
         
-        .btn:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
+        .school {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 5px;
         }
         
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-        
-        .accomplishment {
-            margin-bottom: 20px;
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-left: 4px solid var(--secondary-color);
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        .honors {
+            color: #2a5298;
+            font-weight: 500;
         }
         
         @media (max-width: 768px) {
-            .profile-contact {
-                text-align: left;
-                margin-top: 20px;
+            h1 {
+                font-size: 2.2em;
             }
             
-            .job-header {
+            .tagline {
+                font-size: 1.1em;
+            }
+            
+            .contact-info {
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .company-header {
                 flex-direction: column;
-            }
-            
-            .job-date {
-                margin-top: 5px;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container profile-container">
-            <div class="profile-header">
+        <div class="container">
+            <div class="header-content">
                 <h1>Christopher Dowin</h1>
-                <p>Vice President, Software Engineering</p>
-            </div>
-            <div class="profile-contact">
-                <p><a href="mailto:cdowin@gmail.com">cdowin@gmail.com</a></p>
-                <p>Bethany, CT</p>
-                <p><a href="https://www.linkedin.com/in/chrisdowin" target="_blank">LinkedIn Profile</a></p>
+                <p class="tagline">Turning challenging engineering initiatives into profitable growth engines.</p>
+                <p style="font-size: 1.1em; margin-bottom: 10px; opacity: 0.9;">15+ years building scalable software platforms. 8+ years leading high-performing engineering teams.</p>
+                <p style="font-size: 1em; opacity: 0.8; font-weight: 300;">Platform Services | Cloud | AI | Software | API | Transformation | Agile</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:cdowin@gmail.com" style="color: white;">cdowin@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>1-321-848-1167</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Bethany, CT</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span>
+                        <a href="https://www.linkedin.com/in/chrisdowin" style="color: white;">LinkedIn</a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    
-    <main class="container">
-        <h2>Aligning People, Process, and Purpose</h2>
-        <section class="summary">
-            <p>15+ years' experience with Software, DevOps, and Cloud. 8+ years as a manager and executive leader.</p>
-            <p>Visionary, proactive, and results-driven engineering executive with expertise in leading end-to-end designs via a managed Software Development Lifecycle (SDLC), while optimizing costs and efficiency to focus on customer value-add.</p>
-            <p>Curious strategic thinker with deep technical background in scaled customer-facing cloud microservice solutions. Passionate cross-functional team leader and mentor galvanizing diverse high-performing teams to set a high bar of excellence in order to motivate the business to achieve the most difficult objectives.</p>
-        </section>
-        
-        <h2>Major Accomplishments</h2>
-        
-        <div class="accomplishment">
-            <p><strong>Francis Scott Key Bridge Disaster Response (April 2024):</strong> Directly coordinated a response to the incident with the customer and external stakeholders. Designed an out of cycle release of upcoming capabilities to publish National AIS vessel positions for situational awareness around the bridge. The solution was built, tested, verified, and deployed end-to-end in less than two weeks, enabling unprecedented data awareness for the U.S. Coast Guard.</p>
-        </div>
-        
-        <div class="accomplishment">
-            <p><strong>Maxar Geospatial Platform Architecture Upgrade (June 2023):</strong> Led cross-company architectural design initiative to consolidate 12+ separate customer deployments into one primary suite of capabilities, saving 4 days per team per month in O&M costs to sustain deployments. Modernized tech stack to ease updates to platform, reducing overall load on DevOps, Business, and Engineering teams.</p>
-        </div>
-        
-        <div class="accomplishment">
-            <p><strong>eAPI (Enhanced API) Successful Contract Negotiation & Delivery (2022):</strong> Negotiated scope and established engineering vision for a brand-new customer mission across a 2-year, $8M contract. Architected a scalable microservice design to meet customer needs. Delivered three months ahead of schedule and 30% under budget.</p>
-        </div>
-        
-        <div class="accomplishment">
-            <p><strong>Global Enhanced GEOINT Delivery (GEGD) Contract Modernization & Sustainment (2019):</strong> Took over engineering management of $44M/yr. firm fixed price contract (GEGD), aligned delivery teams and enabled stuck feature delivery resulting in contract plus-up to $50M/yr.</p>
-        </div>
-        
-        <h2>Work Experience</h2>
-        
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Vice President, Software Engineering</div>
-                    <div class="job-company">Pole Star Defense</div>
-                </div>
-                <div>
-                    <div class="job-location">Remote</div>
-                    <div class="job-date">October 2023 to Present</div>
-                </div>
-            </div>
-            <ul>
-                <li>Created a value-aligned Public Sector Engineering organization focused on executing against direct customer requirements. Consolidated work from subcontractors to streamline value delivery on $49M IDIQ by establishing guiding principles and KPIs which enabled a funded $2.5M contract ceiling increase.</li>
-                <li>Built a scalable maritime data intelligence microservice platform leveraging full IaC automation, GitLab, Kubernetes, Istio, Keycloak, and AWS. Modular architecture allowed for delivery across ten separate customer environments.</li>
-            </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Director - Software Engineering, Mission Accelerator Group</div>
-                    <div class="job-company">Maxar, Inc</div>
-                </div>
-                <div>
-                    <div class="job-location">Remote & Melbourne, FL</div>
-                    <div class="job-date">December 2022 to October 2023</div>
-                </div>
-            </div>
-            <ul>
-                <li>Deputy of department. Reconciled disparate Engineering organizations into one cohesive software factory utilizing a $9M annual budget to enable remote sensing processing capability linked to $40M+ revenue.</li>
-                <li>Enabled revenue expansion to $50M+ through efficiency initiatives which boosted customer confidence for follow-on work.</li>
-                <li>Spearheaded full reorganization of GEOINT access division and integrated sibling MAG Applied Machine Learning organization, accelerating value on current and inherited projects. This aligned with Product vision to create a factory to output "turn key" multi-cloud solutions across AWS, Azure, and disconnected customer environments.</li>
-            </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Director, Software Engineering, GEOINT Access Division</div>
-                    <div class="job-company">Maxar, Inc</div>
-                </div>
-                <div>
-                    <div class="job-location">Remote</div>
-                    <div class="job-date">January 2022 to December 2022</div>
-                </div>
-            </div>
-            <ul>
-                <li>Created a cross-functional division for disseminating imagery and derived intelligence products. Responsible for $8M annual revenue P&L. Beat expected growth target year-over-year by reducing expenses and aligning talent to a common delivery roadmap.</li>
-                <li>Led software solution consolidation, consolidating engineering for GEGD contract ($44M/yr.) to create a cohesive work intake / output stream. Revamped current solution to meet customer requirements, resulting in adoption of five total third-party sources with $200k additional revenue per source ($1M total).</li>
-            </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Sr. Manager, Engineering, Air and Space Division</div>
-                    <div class="job-company">Maxar, Inc</div>
-                </div>
-                <div>
-                    <div class="job-location">Remote & Melbourne, FL</div>
-                    <div class="job-date">January 2018 to January 2022</div>
-                </div>
-            </div>
-            <ul>
-                <li>Organized several tribal engineering teams into a cohesive organization. Developed a responsible release train of teams that adhered to unified metrics used for self-reflection and improvement. Established best practices in automating delivery of cloud solutions.</li>
-                <li>Maxar Geospatial Platform Customer Cloud Uplift successfully administered in 2019/2020 to migrate image processing capability from Commercial AWS to Government Top Secret AWS. Turned $300,000 initial investment into $4.5M ARR on contract renewal in 2023.</li>
-            </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Manager, Engineering, ISR Division</div>
-                    <div class="job-company">Radiant Solutions (acquired by Maxar)</div>
-                </div>
-                <div>
-                    <div class="job-location">Remote and Melbourne, FL</div>
-                    <div class="job-date">May 2016 to January 2018</div>
-                </div>
-            </div>
-            <ul>
-                <li>Drove initiative of 100% adoption of AWS cloud infrastructure for all programs, reducing IT on-premises costs and improving resiliency with a push-button code-to-deployment paradigm using Terraform, GitLab, Kubernetes, and Helm. Saved 50% in cloud costs ($60k/yr.).</li>
-                <li>Managed software release lifecycle of open source toolset, OSSIM (github.com/ossimlabs), for just-in-time remote sensing image processing. Balanced community and company needs to ensure secure deliverables in order to successfully execute against OPTIMUS $8M IDIQ for intelligence customers.</li>
-            </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Software Engineer III</div>
-                    <div class="job-company">NantHealth</div>
-                </div>
-                <div>
-                    <div class="job-location">Remote & Melbourne, FL</div>
-                    <div class="job-date">November 2014 to May 2016</div>
-                </div>
-            </div>
-            <ul>
-                <li>Lead development of dynamically scalable Java Spring back-end services that met customer requirements for third party fitness device integration into the Nant healthcare platform. The integration was compliant with all HIPAA security requirements and enabled users to view all relevant data from one dashboard which increased adoption of the platform.</li>
-            </ul>
-        </div>
-        
-        <section class="skills">
-            <h2>Skills</h2>
-            
-            <div class="skill-category">
-                <div class="skill-title">Technical:</div>
-                <div class="skill-list">
-                    <span class="skill-item">Software Design</span>
-                    <span class="skill-item">Microservices Architecture</span>
-                    <span class="skill-item">AWS</span>
-                    <span class="skill-item">Terraform</span>
-                    <span class="skill-item">Kubernetes</span>
-                    <span class="skill-item">Docker</span>
-                    <span class="skill-item">GitLab</span>
-                    <span class="skill-item">Enterprise Data Management</span>
-                    <span class="skill-item">Data Analytics</span>
-                    <span class="skill-item">RESTful APIs</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <div class="skill-title">Management:</div>
-                <div class="skill-list">
-                    <span class="skill-item">Leadership</span>
-                    <span class="skill-item">P&L Management</span>
-                    <span class="skill-item">Earned Value Management</span>
-                    <span class="skill-item">Strategic Planning</span>
-                    <span class="skill-item">Recruiting</span>
-                    <span class="skill-item">Motivation</span>
-                    <span class="skill-item">Budgeting</span>
-                    <span class="skill-item">OKRs</span>
-                </div>
-            </div>
-        </section>
-        
-        <h2>Education</h2>
-        
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <div class="job-title">Bachelor of Science (magna cum laude), Computer Science</div>
-                    <div class="job-company">Florida Institute of Technology</div>
-                </div>
-                <div>
-                    <div class="job-location">Melbourne, Florida</div>
-                </div>
-            </div>
-        </div>
-        
-        <style>
-            .projects-section {
-                margin: 40px 0;
-            }
-            
-            .project-card {
-                background-color: white;
-                border-radius: var(--border-radius);
-                box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-                margin-bottom: 30px;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-            }
-            
-            .project-header {
-                background-color: var(--primary-color);
-                color: white;
-                padding: 15px 20px;
-            }
-            
-            .project-title {
-                font-size: 1.4rem;
-                margin-bottom: 5px;
-            }
-            
-            .project-title a {
-                color: white;
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                transition: color 0.3s;
-            }
-            
-            .project-title a:hover {
-                color: var(--light-color);
-            }
-            
-            .project-title a svg {
-                margin-left: 8px;
-                width: 16px;
-                height: 16px;
-            }
-            
-            .project-tech {
-                font-size: 0.9rem;
-                opacity: 0.9;
-            }
-            
-            .project-body {
-                padding: 20px;
-            }
-            
-            .project-description {
-                margin-bottom: 15px;
-            }
-            
-            .project-features {
-                margin-top: 15px;
-            }
-            
-            .feature-list {
-                list-style-type: none;
-                margin-left: 0;
-            }
-            
-            .feature-list li {
-                margin-bottom: 8px;
-                padding-left: 25px;
-                position: relative;
-            }
-            
-            .feature-list li::before {
-                content: "✓";
-                color: var(--secondary-color);
-                position: absolute;
-                left: 0;
-                font-weight: bold;
-            }
-            
-            .project-image {
-                max-width: 100%;
-                height: auto;
-                border: 1px solid #eee;
-                border-radius: 5px;
-                margin-top: 15px;
-            }
-        </style>
-        
-        <h2>Personal Projects</h2>
-        
-        <section class="projects-section">
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-title">
-                        <a href="https://gamblewise.app" target="_blank">
-                            Gamblewise
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="project-tech">React, Node.js, Supabase, Cloud Infrastructure, Microservices</div>
-                </div>
-                <div class="project-body">
-                    <div class="project-description">
-                        <p>A responsible gambling educational application designed to help users make informed decisions about their gambling activities. The platform combines data analytics with user-friendly interfaces to teach about the perils of gambling - the house always wins.</p>
-                    </div>
-                    <div class="project-features">
-                        <h4>Key Features:</h4>
-                        <ul class="feature-list">
-                            <li>Global statistics of wins and losses across all games</li>
-                            <li>Secure, privacy-focused architecture</li>
-                            <li>Responsive design for both mobile and desktop</li>
-                            <li>Cloud-based microservices architecture for scalability</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Template for future projects -->
-            <!--
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-title">
-                        <a href="PROJECT_URL" target="_blank">
-                            PROJECT_NAME
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="project-tech">TECHNOLOGIES_USED</div>
-                </div>
-                <div class="project-body">
-                    <div class="project-description">
-                        <p>PROJECT_DESCRIPTION</p>
-                    </div>
-                    <div class="project-features">
-                        <h4>Key Features:</h4>
-                        <ul class="feature-list">
-                            <li>FEATURE_1</li>
-                            <li>FEATURE_2</li>
-                            <li>FEATURE_3</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            -->
-        </section>
-        
-        <div class="cta">
-            <a href="mailto:cdowin@gmail.com" class="btn">Contact Me</a>
-        </div>
-    </main>
-    
-    <footer>
+
+    <section class="section">
         <div class="container">
-            <p>&copy; 2025 Christopher Dowin. All Rights Reserved.</p>
+            <h2 class="section-title">Executive Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">$52M</div>
+                    <div class="impact-description">Annual recurring revenue enabled through crisis leadership and contract rescue initiatives</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">4 Days</div>
+                    <div class="impact-description">Emergency platform delivery during Francis Scott Key Bridge national crisis</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">1500%</div>
+                    <div class="impact-description">ROI growth transforming $300K pilot into $4.5M ARR program</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">$49M</div>
+                    <div class="impact-description">Program ceiling managed while building engineering organization from ground-up</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Leadership Philosophy</h2>
+            <div class="leadership-philosophy">
+                "I bridge the gap between complex technical execution and profitable business outcomes. My approach centers on building autonomous, high-performing teams aligned to customer mission success. Whether responding to national emergencies or transforming underperforming programs, I focus on creating transparent value chains from vision to delivery, ensuring every engineering decision drives measurable business impact."
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Executive Experience</h2>
+            
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Pole Star Defense</div>
+                        <div class="role-title">Vice President, Software Engineering</div>
+                    </div>
+                    <div class="tenure">October 2023 - Present</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Crisis Leadership Excellence:</strong> Led Francis Scott Key Bridge emergency response, delivering critical AIS data platform in 4 days during national crisis, establishing company as trusted USCG emergency partner</li>
+                    <li><strong>Organizational Transformation:</strong> Built engineering organization from ground-up, taking over challenged $49M program and securing $2.3M in new task orders through unified architecture strategy</li>
+                    <li><strong>Revenue Growth:</strong> Drove contract extensions and ceiling increases through consistent delivery excellence and proactive stakeholder management across IL2/4/5 environments</li>
+                    <li><strong>Strategic Integration:</strong> Established cross-functional execution framework synchronizing engineering, PMO, cyber, and operations teams under unified SAFe principles</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Maxar, Inc</div>
+                        <div class="role-title">Director, Software Engineering - Mission Accelerator Group</div>
+                    </div>
+                    <div class="tenure">December 2022 - October 2023</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Rapid Delivery Excellence:</strong> Delivered COMSAR capability in 3 months vs. industry standard 12+ months, securing $10M+ IDIQ for exclusive SAR tasking capacity</li>
+                    <li><strong>Organizational Resilience:</strong> Navigated private equity reorganization while maintaining 100% contract delivery performance and zero voluntary team attrition</li>
+                    <li><strong>Technical Leadership:</strong> Architected surge-capable platform integrating 10+ year legacy systems with modern microservices for critical customer deadline</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Maxar, Inc</div>
+                        <div class="role-title">Director, Software Engineering - GEOINT Access Division</div>
+                    </div>
+                    <div class="tenure">January 2022 - December 2022</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Contract Rescue & Growth:</strong> Transformed underperforming $44M GEGD contract into $50M+ growth engine through team realignment and delivery process optimization</li>
+                    <li><strong>Strategic Cost Management:</strong> Led hardware EOSL risk assessment preventing $millions in reactive spending while securing follow-on contract positioning</li>
+                    <li><strong>Operational Excellence:</strong> Consolidated 12+ separate deployments saving 4 days/team/month in operational overhead with $9M budget oversight</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company-header">
+                    <div>
+                        <div class="company-name">Maxar, Inc</div>
+                        <div class="role-title">Senior Manager, Engineering - Air and Space Division</div>
+                    </div>
+                    <div class="tenure">January 2018 - January 2022</div>
+                </div>
+                <ul class="achievements">
+                    <li><strong>Exceptional Contract Delivery:</strong> Delivered $8M eAPI engagement 3 months ahead of schedule and 30% under budget through microservice architecture innovation</li>
+                    <li><strong>ROI Transformation:</strong> Converted $300K JWICS pilot into $4.5M ARR by architecting modular geospatial platform across multiple security domains</li>
+                    <li><strong>Cloud Leadership:</strong> Drove 100% AWS adoption achieving 50% cost savings while enabling push-button deployment paradigm using IaC principles</li>
+                    <li><strong>Security Excellence:</strong> Achieved JWICS (Top Secret) ATO in AWS environment, pioneering cloud adoption for intelligence customers</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Executive Leadership</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">P&L Management</span>
+                        <span class="skill-tag">Crisis Leadership</span>
+                        <span class="skill-tag">Organizational Design</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Revenue Generation</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Technical Architecture</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Cloud Strategy</span>
+                        <span class="skill-tag">Platform Engineering</span>
+                        <span class="skill-tag">Zero-Trust Security</span>
+                        <span class="skill-tag">Multi-Cloud Deployment</span>
+                        <span class="skill-tag">CI/CD Architecture</span>
+                        <span class="skill-tag">Microservices</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Domain Expertise</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AI/ML Engineering</span>
+                        <span class="skill-tag">Remote Sensing</span>
+                        <span class="skill-tag">Geospatial Intelligence</span>
+                        <span class="skill-tag">Real-time Analytics</span>
+                        <span class="skill-tag">Predictive Modeling</span>
+                        <span class="skill-tag">Enterprise Contracting</span>
+                        <span class="skill-tag">Regulatory Compliance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Education & Recognition</h2>
+            <div class="education">
+                <div class="degree">Bachelor of Science, Computer Science</div>
+                <div class="school">Florida Institute of Technology</div>
+                <div class="honors">Magna Cum Laude</div>
+                <div style="margin-top: 20px; color: #666;">
+                    <strong>Patents:</strong> 4 issued patents in Dynamic Network Defense and Data Storage Systems<br>
+                    <strong>Recognition:</strong> Harris Product and Process Innovation Award
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #1e3c72; color: white; text-align: center; padding: 30px 0;">
+        <div class="container">
+            <p>&copy; 2025 Christopher Dowin. Executive leader driving transformational growth through technical excellence.</p>
         </div>
     </footer>
 </body>
